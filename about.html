@@ -14,7 +14,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="quote.html" class="quote-button">Get a Quote</a></li>
+                <li><a href="#" class="quote-button" id="openModal">Get a Quote</a></li>
             </ul>
         </nav>
     </header>
@@ -28,8 +28,29 @@
                 At the core of On Wall Solutions is a commitment to innovation, reliability, and personalized service. We don’t just provide AV systems—we create experiences that inspire and enhance your world.</p>
         </section>
     </main>
+    
+     <!-- Modal -->
+     <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Get a Quote</h2>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="details">Project Details:</label><br>
+                <textarea id="details" name="details" rows="4" required></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2025 On Wall Solutions LLC. All rights reserved.</p>
     </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
