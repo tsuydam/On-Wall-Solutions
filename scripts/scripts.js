@@ -47,3 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById("navToggle");
+    const navbar = document.querySelector("nav ul");
+
+    navToggle.addEventListener("click", () => {
+        navbar.classList.toggle("show"); // Toggle the "show" class
+    });
+});

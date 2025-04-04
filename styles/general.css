@@ -15,21 +15,65 @@ header {
     text-align: center;
 }
 
-/* Navigation styles */
+/* Default Navigation Styles */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex; /* Horizontal layout by default */
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent wrapping by default */
 }
 
 nav ul li {
-    display: inline;
-    margin: 50px;
+    margin: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* Dropdown Navigation for Smaller Screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide navigation by default */
+        flex-direction: column; /* Stack items vertically */
+        background-color: #000; /* Dropdown background color */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex; /* Show navigation when toggled */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add spacing between items */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Increase font size for dropdown */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu */
+    }
 }
 
 /* Main content styles */
