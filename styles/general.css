@@ -28,20 +28,58 @@ header {
 }
 
 /* Navigation styles */
+nav {
+    display: flex; /* Use Flexbox for horizontal layout */
+    justify-content: center; /* Center the navigation items */
+    align-items: center; /* Align items vertically */
+    background-color: #000; /* Background color for the navbar */
+    padding: 1rem; /* Add padding around the navbar */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+}
+
 nav ul {
-    list-style: none;
+    display: flex; /* Flexbox for horizontal layout */
+    list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 50px;
+    margin: 0 1rem; /* Add spacing between items */
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Default font size */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    color: #ddd; /* Change color on hover */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    nav ul li a {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+
+    nav ul li {
+        margin: 0 0.5rem; /* Reduce spacing between items */
+    }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 1200px) {
+    nav ul li a {
+        font-size: 1.2rem; /* Increase font size for larger screens */
+    }
+
+    nav ul li {
+        margin: 0 1.5rem; /* Increase spacing between items */
+    }
 }
 
 /* Main content styles */
