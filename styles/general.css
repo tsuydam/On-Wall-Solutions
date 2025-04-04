@@ -96,9 +96,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
+    z-index: 1;
     box-sizing: border-box; /* Prevent footer from exceeding width */
 }
 
