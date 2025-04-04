@@ -96,16 +96,26 @@ main {
     max-width: 100%; /* Ensure content fits within the viewport */
 }
 
+* Ensure the page container takes up the full height of the viewport */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Allow the main content to grow and push the footer to the bottom */
+main {
+    flex: 1; /* Take up remaining space */
+}
+
 /* Footer styles */
 footer {
     background-color: #000000;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    box-sizing: border-box; /* Prevent footer from exceeding width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .modal {

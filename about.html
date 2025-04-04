@@ -7,51 +7,29 @@
     <link rel="stylesheet" href="styles/general.css">
 </head>
 <body>
-    <header>
-        <img src="Photos/logo1.jpg" alt="On Wall Solutions Logo" id="logo">
-        <button id="navToggle" class="hamburger">&#9776;</button> <!-- Hamburger menu -->
-        <nav id="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="#" class="quote-button" id="openModal">Get a Quote</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About On Wall Solutions</h2>
-            <p>At On Wall Solutions, we believe that technology should work seamlessly to elevate your lifestyle and business. Since our inception, we’ve been dedicated to delivering custom audio-visual solutions that combine state-of-the-art technology with exceptional design.
-
-                Our team of experienced professionals specializes in creating tailored AV systems that fit perfectly into your space—whether it’s a high-end home theater, a modernized conference room, or a fully integrated smart home. We pride ourselves on offering not just cutting-edge technology, but also outstanding customer support to ensure your satisfaction at every step.
-                
-                At the core of On Wall Solutions is a commitment to innovation, reliability, and personalized service. We don’t just provide AV systems—we create experiences that inspire and enhance your world.</p>
-        </section>
-    </main>
-    
-     <!-- Modal -->
-     <div id="quoteModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>Get a Quote</h2>
-            <form>
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="details">Project Details:</label><br>
-                <textarea id="details" name="details" rows="4" required></textarea><br><br>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+    <div class="page-container">
+        <header>
+            <img src="Photos/logo1.jpg" alt="On Wall Solutions Logo" id="logo">
+            <button id="navToggle" class="hamburger">&#9776;</button> <!-- Hamburger menu -->
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#" class="quote-button" id="openModal">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="about">
+                <h2>About On Wall Solutions</h2>
+                <p>At On Wall Solutions, we believe that technology should work seamlessly to elevate your lifestyle and business...</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 On Wall Solutions LLC. All rights reserved.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2025 On Wall Solutions LLC. All rights reserved.</p>
-    </footer>
-
-    <!-- Link to external JavaScript file -->
     <script src="scripts/scripts.js"></script>
 </body>
 </html>
