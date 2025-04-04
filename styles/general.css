@@ -205,7 +205,22 @@ footer {
 #logo {
     display: block;
     margin: 0 auto; /* Center the logo */
-    max-width: 200px; /* Set a maximum width for the logo */
+    width: 20%; /* Set the logo width as a percentage of the viewport or container */
+    max-width: 300px; /* Set a maximum width for the logo */
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px; /* Add spacing below the logo */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    #logo {
+        width: 40%; /* Increase the logo size for smaller screens */
+    }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 1200px) {
+    #logo {
+        width: 15%; /* Decrease the logo size for larger screens */
+    }
 }
