@@ -7,70 +7,82 @@ html, body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Header styles */
+/* Header Styles */
 header {
-    background-color: #000000;
-    color: #000000;
+    position: relative;
+    background-color: #000;
+    color: #fff;
     padding: 1rem;
     text-align: center;
 }
 
-/* Default Navigation Styles */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Horizontal layout by default */
-    justify-content: center;
-    flex-wrap: nowrap; /* Prevent wrapping by default */
-}
-
-nav ul li {
-    margin: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-/* Hamburger Menu Styles */
+/* Center the Hamburger Menu */
 .hamburger {
-    display: none; /* Hide by default */
+    display: none; /* Hidden by default */
     background: none;
     border: none;
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
-    margin: 10px;
+    margin: 10px auto; /* Center the hamburger */
 }
 
-/* Dropdown Navigation for Smaller Screens */
+/* Navigation Styles */
+nav {
+    display: none; /* Hidden by default */
+    background-color: #000; /* Dropdown background color */
+    text-align: center;
+    width: 100%;
+    position: relative;
+    transition: max-height 0.3s ease-out; /* Smooth transition for height */
+    overflow: hidden; /* Prevent content from overflowing */
+    max-height: 0; /* Initially collapsed */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 10px 0; /* Add spacing between items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Show Navigation and Push Content Down */
+nav.show {
+    display: block; /* Show navigation */
+    max-height: 300px; /* Adjust based on the height of your menu items */
+}
+
+/* Smooth Transition for Main Content */
+main {
+    transition: margin-top 0.3s ease-out; /* Smooth transition for content movement */
+}
+
+main.shifted {
+    margin-top: 300px; /* Adjust based on the height of your menu items */
+}
+
+/* Center the Hamburger Menu */
+.hamburger {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px auto; /* Center the hamburger */
+}
+
+/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide navigation by default */
-        flex-direction: column; /* Stack items vertically */
-        background-color: #000; /* Dropdown background color */
-        position: absolute;
-        top: 60px; /* Adjust based on header height */
-        left: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul.show {
-        display: flex; /* Show navigation when toggled */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Add spacing between items */
-    }
-
-    nav ul li a {
-        font-size: 1.2rem; /* Increase font size for dropdown */
-    }
-
     .hamburger {
         display: block; /* Show hamburger menu */
     }
