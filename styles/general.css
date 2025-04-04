@@ -1,5 +1,6 @@
 /* Ensure the html and body occupy the full viewport */
 html, body {
+    background-color: #bbbbbb;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -8,8 +9,8 @@ html, body {
 
 /* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #000000;
+    color: #000000;
     padding: 1rem;
     text-align: center;
 }
@@ -23,7 +24,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 50px;
 }
 
 nav ul li a {
@@ -41,7 +42,7 @@ main {
 
 /* Footer styles */
 footer {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     text-align: center;
     padding: 1rem;
@@ -198,4 +199,13 @@ footer {
     #gallery img {
         height: 300px; /* Increase image height for larger screens */
     }
+}
+
+/* Logo Styles */
+#logo {
+    display: block;
+    margin: 0 auto; /* Center the logo */
+    max-width: 200px; /* Set a maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add spacing below the logo */
 }
