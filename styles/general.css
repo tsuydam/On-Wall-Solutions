@@ -1,13 +1,18 @@
-/* Ensure the html and body occupy the full viewport */
-html, body {
+/* ===========================
+   Global Styles
+   =========================== */
+   html, body {
     background-color: #bbbbbb;
     height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box; /* Apply box-sizing globally */
 }
 
-/* Header Styles */
+/* ===========================
+   Header Styles
+   =========================== */
 header {
     position: relative;
     background-color: #000;
@@ -16,33 +21,49 @@ header {
     text-align: center;
 }
 
-/* Center the Hamburger Menu */
-.hamburger {
-    display: none; /* Hidden by default */
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-    margin: 10px auto; /* Center the hamburger */
+/* Logo Styles */
+#logo {
+    display: block;
+    margin: 0 auto; /* Center the logo */
+    width: 20%; /* Set the logo width as a percentage of the viewport or container */
+    max-width: 300px; /* Set a maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add spacing below the logo */
 }
 
-/* Navigation Styles */
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    #logo {
+        width: 40%; /* Increase the logo size for smaller screens */
+    }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 1200px) {
+    #logo {
+        width: 15%; /* Decrease the logo size for larger screens */
+    }
+}
+
+/* ===========================
+   Navigation Styles
+   =========================== */
 nav {
-    display: none; /* Hidden by default */
+    display: none; /* Hide navigation by default */
     background-color: #000; /* Dropdown background color */
     text-align: center;
     width: 100%;
-    position: relative;
-    transition: max-height 0.3s ease-out; /* Smooth transition for height */
-    overflow: hidden; /* Prevent content from overflowing */
-    max-height: 0; /* Initially collapsed */
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-direction: column; /* Stack items vertically */
 }
 
 nav ul li {
@@ -55,22 +76,12 @@ nav ul li a {
     font-size: 1.2rem;
 }
 
-/* Show Navigation and Push Content Down */
+/* Show Navigation */
 nav.show {
-    display: block; /* Show navigation */
-    max-height: 300px; /* Adjust based on the height of your menu items */
+    display: block; /* Show navigation when toggled */
 }
 
-/* Smooth Transition for Main Content */
-main {
-    transition: margin-top 0.3s ease-out; /* Smooth transition for content movement */
-}
-
-main.shifted {
-    margin-top: 300px; /* Adjust based on the height of your menu items */
-}
-
-/* Center the Hamburger Menu */
+/* Hamburger Menu Styles */
 .hamburger {
     display: none; /* Hidden by default */
     background: none;
@@ -88,27 +99,19 @@ main.shifted {
     }
 }
 
-/* Main content styles */
+/* ===========================
+   Main Content Styles
+   =========================== */
 main {
+    flex: 1; /* Take up remaining space */
     min-height: calc(100% - 160px); /* Adjust based on header and footer height */
     padding: 2rem;
-    box-sizing: border-box; /* Include padding within the width/height calculations */
     max-width: 100%; /* Ensure content fits within the viewport */
 }
 
-* Ensure the page container takes up the full height of the viewport */
-.page-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
-}
-
-/* Allow the main content to grow and push the footer to the bottom */
-main {
-    flex: 1; /* Take up remaining space */
-}
-
-/* Footer styles */
+/* ===========================
+   Footer Styles
+   =========================== */
 footer {
     background-color: #000000;
     color: #fff;
@@ -118,6 +121,9 @@ footer {
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
+/* ===========================
+   Modal Styles
+   =========================== */
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -138,7 +144,7 @@ footer {
     width: 50%;
     border-radius: 10px;
     text-align: center;
-    }
+}
 
 .close {
     color: #aaa;
@@ -154,47 +160,9 @@ footer {
     text-decoration: none;
 }
 
-/* Modal for enlarged images */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    max-width: 1200px; /* Remove width constraints */
-    max-height: 1200px; /* Remove height constraints */
-    width: auto; /* Use the image's natural width */
-    height: auto; /* Use the image's natural height */
-    border: 3px solid #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #ccc;
-    text-decoration: none;
-}
-
-/* Responsive Gallery Styles */
+/* ===========================
+   Gallery Styles
+   =========================== */
 #gallery {
     display: grid; /* Use CSS Grid for layout */
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust columns based on viewport size */
@@ -209,7 +177,7 @@ footer {
 
 #gallery img {
     width: 100%; /* Make images fill their grid cell */
-    height: 200px; /* Set a fixed height for all images */
+    height: 200px; /* Default height for medium screens */
     object-fit: cover; /* Ensure images maintain aspect ratio and fill the space */
     border: 3px solid #ddd; /* Light border around images */
     border-radius: 10px; /* Rounded corners for images */
@@ -235,58 +203,9 @@ footer {
     }
 }
 
-/* Default styles for images */
-#gallery img {
-    width: 100%; /* Make images fill their grid cell */
-    height: 200px; /* Default height for medium screens */
-    object-fit: cover; /* Ensure images maintain aspect ratio and fill the space */
-    border: 3px solid #ddd; /* Light border around images */
-    border-radius: 10px; /* Rounded corners for images */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
-
-/* Hover effect */
-#gallery img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-    #gallery img {
-        height: 150px; /* Reduce image height for smaller screens */
-        border: 2px solid #ddd; /* Slightly thinner border for smaller screens */
-    }
-}
-
 /* Media Query for Larger Screens */
 @media (min-width: 1200px) {
     #gallery img {
         height: 300px; /* Increase image height for larger screens */
-    }
-}
-
-/* Logo Styles */
-#logo {
-    display: block;
-    margin: 0 auto; /* Center the logo */
-    width: 20%; /* Set the logo width as a percentage of the viewport or container */
-    max-width: 300px; /* Set a maximum width for the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Add spacing below the logo */
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-    #logo {
-        width: 40%; /* Increase the logo size for smaller screens */
-    }
-}
-
-/* Media Query for Larger Screens */
-@media (min-width: 1200px) {
-    #logo {
-        width: 15%; /* Decrease the logo size for larger screens */
     }
 }
