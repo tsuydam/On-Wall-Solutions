@@ -48,6 +48,7 @@ header {
 /* ===========================
    Navigation Styles
    =========================== */
+/* Default Navigation Styles */
 nav {
     display: none; /* Hide navigation by default */
     background-color: #000; /* Dropdown background color */
